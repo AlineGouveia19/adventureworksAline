@@ -1,0 +1,334 @@
+version: 2
+
+models:
+    - name: dim_customer
+      description: "This is the Dimension of Customer"
+      columns:
+          - name: customerid
+            description: "Primary key for this dimension"
+            tests:
+                - unique
+                - not_null
+
+          - name: customer_sk   
+            description: "Surrogate key for this dimension"
+            tests:
+                - unique
+                - not_null  
+                
+          - name: personid   
+            description: "Foreign key for table salesperson"
+            
+          - name: businessentityid   
+            description: "Foreign key for table person"  
+          
+          - name: fistname 
+            description: "Customer firt name" 
+          
+          - name: lastname 
+            description: "Customer last name"    
+
+          - name: title 
+            description: "Customer title" 
+
+          - name: persontype 
+            description: "Customer person type"
+
+          - name: namestaly
+            description: "Customer namestyle"              
+ 
+    - name: dim_employee
+      description: "This is the Dimension of employee"
+      columns:
+          - name: businessentityid
+            description: "Primary key for this dimension"
+            tests:
+                - unique
+                - not_null
+
+          - name: employee_sk   
+            description: "Surrogate key for this dimension"
+            tests:
+                - unique
+                - not_null  
+          
+          - name: salesquota
+            description: "Sales cota of employee"              
+          
+                     
+          - name: commissionpct
+            description: "Sales comission of employee"   
+
+          - name: bonus
+            description: "Sales bonus of employee"   
+            
+          - name: jobtitle
+            description: "Job title of employee"  
+            
+          - name: nationalidnumber
+            description: "Id number national of employee"
+
+          - name: hiredate
+            description: "hire date of employee"
+          
+          - name: salariedflag
+            description: "Flag salaried of employee"
+            
+          - name: firstname 
+            description: "First Name of employee"
+            
+          - name: lastname
+            description: "Last Name of employee" 
+            
+          - name: title
+            description: "Title of employee"
+            
+          - name: persontype
+            description: "Person Type of employee"
+            
+          - name: emailpromotion
+            description: "Email promotion of employee" 
+            
+    - name: dim_creditcard
+      description: "This is the Dimension of Credit Cards"
+      columns:
+          - name: creditcardid
+            description: "Primary key for this dimension"
+            tests:
+                - unique
+                - not_null
+
+          - name: creditcard_sk   
+            description: "Surrogate key for this dimension"
+            tests:
+                - unique
+                - not_null  
+          
+          - name: businessentityid
+            description: "Foreign key for table personcreditcard"              
+          
+          - name: cardtype
+            description: "Credit Card type"
+            
+          - name: cardnumber
+            description: "Credit Card number"
+           
+          - name: expmonth
+            description: "Credit Card expiration month"
+            
+          - name: expyear
+            description: "Credit Card expiration year"  
+            
+    - name: dim_address
+      description: "This is the Dimension of Address"
+      columns:
+          - name: addressid
+            description: "Primary key for this dimension"
+            tests:
+                - unique
+                - not_null
+
+          - name: address_SK   
+            description: "Surrogate key for this dimension"
+            tests:
+                - unique
+                - not_null  
+          
+          - name: stateprovinceid
+            description: "Foreign key for table State Province"              
+              
+          - name: countryregioncode
+            description: "Foreign key for table Country"              
+          
+            
+          - name: addressline1
+            description: "Address line 1"
+            
+          - name: addressline2
+            description: "Address line 1"
+           
+          - name: city
+            description: "Address City"
+            
+          - name: postalcode
+            description: "Address Postal Code"  
+
+          - name: spatiallocation
+            description: "Address Spatial Location"  
+            
+          - name: stateprovincecode
+            description: "State Province Code"  
+            
+          - name: isonlystateprovinceflag
+            description: "Flag isonlystateprovince"  
+          
+          - name: name_province
+            description: "Province name"  
+          
+          - name: territoryid
+            description: "territory id"  
+          
+          - name: name_country
+            description: "Country name"  
+      
+    - name: dim_salesreason
+      description: "This is the Dimension of Sales Reason"
+      columns:
+          - name: salesreasonid
+            description: "Primary key for this dimension"
+            tests:
+                - unique
+                - not_null
+
+          - name: salesreason_SK  
+            description: "Surrogate key for this dimension"
+            tests:
+                - unique
+                - not_null  
+          
+          - name: salesorderid
+            description: "Foreign key from table salesorderheadersalesreason"              
+              
+          - name: reasontype
+            description: "Reason Type"              
+                      
+          - name: name
+            description: "Reason Name"
+    
+    - name: dim_product
+      description: "This is the Dimension of Products"
+      columns:
+          - name: productid
+            description: "Primary key for this dimension"
+            tests:
+                - unique
+                - not_null
+
+          - name: product_SK  
+            description: "Surrogate key for this dimension"
+            tests:
+                - unique
+                - not_null  
+          
+          - name: productsubcategoryid
+            description: "Foreign key from table productsubcategory"   
+          
+          - name: productcategoryid
+            description: "Foreign key from table productcategoryid"   
+                
+          - name: name
+            description: "Product name"              
+          
+          - name: productnumber
+            description: "Product number"              
+            
+          - name: color
+            description: "Product color"              
+            
+          - name: safetystocklevel
+            description: "Product safety stock level"              
+          
+          - name: reorderpoint
+            description: "Product Reorder point" 
+           
+          - name: standardcost
+            description: "Product Standard Cost"
+           
+          - name: listprice
+            description: "Product List Price"
+            
+          - name: size
+            description: "Product Siza"
+            
+          - name: sizeunitmeasurecode
+            description: "Product size Unit Measurecode" 
+            
+          - name: weightunitmeasurecode
+            description: "Product Weight Unit Measurecode" 
+            
+          - name: weight
+            description: "Product Weight"
+          
+          - name: daystomanufacture
+            description: "Product day sto manufacture"  
+          
+          - name: productline
+            description: "Product Product line"  
+            
+          - name: class
+            description: "Product class"  
+            
+          - name: sellenddate
+            description: "Product sell end date"  
+         
+          - name: productmodelid
+            description: "Product Model id" 
+           
+          - name: sellstartdate
+            description: "Product sell start date"   
+           
+          - name: name_subcategory
+            description: "Product name_subcategory"
+            
+          - name: name_category
+            description: "Product name category" 
+          
+          - name: style
+            description: "Product style"    
+    
+    - name: fact_sales_details
+      description: "This is the Fact Table"
+      columns:
+          - name: salesorderid
+            description: "Primary key for this table"
+
+          - name: salesorderdetailid
+            description: "Primary key for this table"
+                        
+          - name: product_SK  
+            description: "Surrogate key for dimension of Product"
+            
+          - name: customer_SK  
+            description: "Surrogate key for dimension of Customer"
+          
+          - name: employee_SK  
+            description: "Surrogate key for dimension of employee"
+          
+          - name: salesreason_SK  
+            description: "Surrogate key for dimension of Sales Reason"
+
+          - name: credticard_SK  
+            description: "Surrogate key for dimension of Credit Card"
+          
+          - name: address_SK  
+            description: "Surrogate key for dimension of Addrees"
+          
+          - name: taxamt
+            description: "Taxamt of order"
+
+          - name: taxamt
+            description: "Taxamt of order"     
+
+          - name: shiptoaddressid
+            description: "Foreign key from table ship"     
+    
+          - name: status
+            description: "Status of order"
+
+          - name: orderdate
+            description: "Order date of order"
+
+          - name: subtotal
+            description: "Subtotal of order"
+
+          - name: freight	
+            description: "Freight	of order"
+
+          - name: unitprice	
+            description: "Unit Price	of Products Order"
+  
+          - name: unitpricediscount	
+            description: "unit price discount of Products Order"
+          
+          - name: valor_total	
+            description: "Valor Total	of order"

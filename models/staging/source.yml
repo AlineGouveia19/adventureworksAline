@@ -1,0 +1,157 @@
+version: 2
+
+sources: 
+  - name: adventureworksss
+    description: "Adventures Work table"
+    tables: 
+      - name: sales_customer
+        description: Customers table of the DB AdventureWorks
+        columns:
+          - name: customerid
+            description: primary key of customer table
+            tests:
+              - unique
+              - not_null
+
+      - name: person_person
+        description: People table of the DB AdventureWorks  
+        columns:
+          - name: businessentityid
+            description: Primary key of person table
+            tests:
+              - unique
+              - not_null
+
+      - name: sales_salesorderheadersalesreason
+        description:  Head Reason Sales table of the DB AdventureWorks  
+        columns:
+          - name: salesorderid
+            description: Primary key of salesorderheadersalesreason
+            tests:
+              - not_null   
+
+      - name: sales_salesreason
+        description: Reason Sales table of the DB AdventureWorks 
+        columns:
+          - name: salesreasonid
+            description: Primary key of salesreason
+            tests:
+              - unique
+              - not_null  
+              
+      - name: sales_salesperson
+        description: Person Sales table of the DB AdventureWorks 
+        columns:
+          - name: businessentityid
+            description: Primary key of salesperson
+            tests:
+              - unique
+              - not_null          
+              
+      - name: humanresources_employee
+        description: Employees table of the DB AdventureWorks 
+        columns:
+          - name: businessentityid
+            description: Primary key of Employees
+            tests:
+              - unique
+              - not_null 
+              
+      - name: sales_salesterritory
+        description: Sales Territory table of the DB AdventureWorks 
+        columns:
+          - name: territoryid
+            description: Primary key of SalesTerritory
+            tests:
+              - unique
+              - not_null  
+      
+      - name: person_stateprovince
+        description: States/Provices table of the Sales Order - DB AdventureWorks 
+        columns:
+          - name: stateprovinceid
+            description: Primary key of Stateprovince
+            tests:
+              - unique
+              - not_null       
+              
+      - name: person_address
+        description: Address table of the Sales Order - DB AdventureWorks 
+        columns:
+          - name: addressid
+            description: Primary key of Address
+            tests:
+              - unique
+              - not_null  
+
+      - name: person_countryregion
+        description: Countries table of the Sales Order - DB AdventureWorks 
+        columns:
+          - name: countryregioncode
+            description: Primary key of Countries
+            tests:
+              - unique
+              - not_null     
+
+      - name: sales_creditcard
+        description: Credit cards table of the Sales Order - DB AdventureWorks 
+        columns:
+          - name: creditcardid
+            description: Primary key of creditcard
+            tests:
+              - unique
+              - not_null 
+
+      - name: sales_personcreditcard
+        description: Credit card People table of the Sales Order - DB AdventureWorks 
+        columns:
+          - name: businessentityid
+            description: Primary key of personcreditcard
+            tests:
+              - unique
+              - not_null               
+              
+      - name: production_product
+        description: Products table of the Sales Order - DB AdventureWorks 
+        columns:
+          - name: productid
+            description: Primary key of product
+            tests:
+              - unique
+              - not_null    
+              
+      - name:  production_productsubcategory
+        description: Products sub category table of the product - DB AdventureWorks 
+        columns:
+          - name:  productsubcategoryid
+            description: Primary key of productsubcategory
+            tests:
+              - unique
+              - not_null            
+              
+      - name:  production_productcategory
+        description: Products category table of the product - DB AdventureWorks 
+        columns:
+          - name:  productcategoryid
+            description: Primary key of productcategory
+            tests:
+              - unique
+              - not_null   
+      
+      - name:  sales_salesorderheader 
+        description: Sales Orders Header table - DB AdventureWorks 
+        columns:
+          - name:  salesorderid
+            description: Primary key of salesorderheader 
+            tests:
+              - unique
+              - not_null   
+
+      - name: sales_salesorderdetail
+        description: Sales Orders Details table - DB AdventureWorks 
+        columns:
+          - name:  salesorderdetailid
+            description: Primary key of  salesorderdetail
+            tests:
+              - unique
+              - not_null            
